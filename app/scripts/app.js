@@ -17,6 +17,10 @@ angular.module('firebasepracticeApp', [
         templateUrl: 'views/foodrepository.html',
         controller: 'FoodrepoCtrl'
       })
+      .when('/addfood', {
+        templateUrl: 'views/addfood.html',
+        controller: 'FoodrepoCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

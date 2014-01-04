@@ -8,7 +8,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="food in foods">
+    <tr ng-repeat="(key, food) in foods">
+      {{name}}
       <td>{{food.name}}</td>
       <td>{{food.price | currency}}</td>
       <td>
@@ -16,7 +17,7 @@
           <div class="col-xs-12 col-sm-6 col-md-8">
             <button class="btn btn-warning btn-sm" ng-click="selectFood($index)"><i class="glyphicon glyphicon-edit"></i></button>
             <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-search"></i></button>
-            <button class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
+            <button class="btn btn-danger btn-sm" ng-click="removeFood(key)"><i class="glyphicon glyphicon-trash"></i></button>
           </div>
         </div>
       </td>

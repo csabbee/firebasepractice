@@ -11,15 +11,15 @@ angular.module('firebasepracticeApp')
     // 3-way data binding between angular and firebase
     foods.$bind($scope,'foods').then(function(){
 
-      $scope.selectFood = function(index){
-        $scope.foodToEdit = index;
+      $scope.selectFood = function(key){
+        $scope.foodToEdit = key;
         $scope.showEditForm = 'true';
-        $scope.editedFood.name = $scope.foods[index].name;
-        $scope.editedFood.price = $scope.foods[index].price;
+        $scope.editedFood.name = $scope.foods[key].name;
+        $scope.editedFood.price = $scope.foods[key].price;
       };
-      $scope.editFood = function(index, name, price){
-        $scope.foods[index].name = name;
-        $scope.foods[index].price = price;
+      $scope.editFood = function(key, name, price){
+        $scope.foods[key].name = name;
+        $scope.foods[key].price = price;
         $scope.foodToEdit = '';
         $scope.showEditForm = '';
       };

@@ -7,7 +7,7 @@ angular.module('firebasepracticeApp')
     var foods = $firebase(new Firebase(FBURL));
 
     // 3-way data binding between angular and firebase
-    foods.$bind($scope,"foods").then(function(){
+    foods.$bind($scope,'foods').then(function(){
 
       $scope.editFood = function(index, data){
         $scope.foods[index] = data;

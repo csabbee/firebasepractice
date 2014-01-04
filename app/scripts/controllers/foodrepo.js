@@ -27,5 +27,8 @@ angular.module('firebasepracticeApp')
         $scope.foods.$add($scope.newFood);
         $scope.newFood = {};
       };
+      $scope.removeFood = function(key){
+        $scope.foods.$remove(key);
+      };
     });
   });

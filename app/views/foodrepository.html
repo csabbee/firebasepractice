@@ -25,8 +25,8 @@
 </table>
 <div ng-show="showEditForm">
   <div ng-form="foodEditorForm" class="form-horizontal">
-    <input ng-model="editedFood.name" type="text" required ng-minlength="3" ng-maxlength="20" ng-trim="true" placeholder="name of the food" ng-value="editedFood.name =foods[foodToEdit].name">
-    <input ng-model="editedFood.price" type="number" required min="0" placeholder="price" ng-value="editedFood.price = foods[foodToEdit].price">
+    <input ng-model="editedFood.name" type="text" required ng-minlength="3" ng-maxlength="20" ng-trim="true" placeholder="name of the food">
+    <input ng-model="editedFood.price" type="number" required min="0" placeholder="price">
     <button class="btn btn-primary" ng-click="editFood(foodToEdit, editedFood.name, editedFood.price)">Save</button>
   </div>
   <h2>haloebed</h2>

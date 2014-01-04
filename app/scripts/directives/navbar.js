@@ -19,6 +19,7 @@ angular.module('firebasepracticeApp')
           '<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">'+
             '<ul class="nav navbar-nav">'+
               '<li itemhover><a href="#/foodrepository">Foods</a></li>'+
+              '<li itemhover><a href="#/addfood">Add food</a></li>'+
             '</ul>'+
           '</div><!-- /.navbar-collapse -->'+
         '</nav>',

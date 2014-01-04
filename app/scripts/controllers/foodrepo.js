@@ -23,5 +23,9 @@ angular.module('firebasepracticeApp')
         $scope.foodToEdit = '';
         $scope.showEditForm = '';
       };
+      $scope.addFood = function(){
+        $scope.foods.$add($scope.newFood);
+        $scope.newFood = {};
+      };
     });
   });

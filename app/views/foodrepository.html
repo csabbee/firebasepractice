@@ -14,7 +14,7 @@
       <td>
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-8">
-            <button class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-edit"></i></button>
+            <button class="btn btn-warning btn-sm" ng-click="selectFood($index)"><i class="glyphicon glyphicon-edit"></i></button>
             <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-search"></i></button>
             <button class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
           </div>
@@ -23,5 +23,13 @@
     </tr>
   </tbody>
 </table>
+<div ng-show="showEditForm">
+  <div ng-form="foodEditorForm" class="form-horizontal">
+    <input ng-model="editedFood.name" type="text" required ng-minlength="3" ng-maxlength="20" ng-trim="true" placeholder="name of the food" ng-value="editedFood.name =foods[foodToEdit].name">
+    <input ng-model="editedFood.price" type="number" required min="0" placeholder="price" ng-value="editedFood.price = foods[foodToEdit].price">
+    <button class="btn btn-primary" ng-click="editFood(foodToEdit, editedFood.name, editedFood.price)">Save</button>
+  </div>
+  <h2>haloebed</h2>
+</div>
 
 

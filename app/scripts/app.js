@@ -5,7 +5,8 @@ angular.module('firebasepracticeApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'firebase'
+  'firebase',
+  'ui.bootstrap'
 ])
   .config(function ($routeProvider) {
     $routeProvider

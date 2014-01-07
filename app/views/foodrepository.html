@@ -9,7 +9,6 @@
   </thead>
   <tbody>
     <tr ng-repeat="(key, food) in foods">
-      {{name}}
       <td>{{food.name}}</td>
       <td>{{food.price | currency}}</td>
       <td>
@@ -25,11 +24,13 @@
   </tbody>
 </table>
 <div ng-show="showEditForm">
-  <div ng-form="foodEditorForm" class="form-horizontal">
-    <input ng-model="editedFood.name" type="text" required ng-minlength="3" ng-maxlength="20" ng-trim="true" placeholder="name of the food">
-    <input ng-model="editedFood.price" type="number" required min="0" placeholder="price">
-    <button class="btn btn-primary" ng-click="editFood(foodToEdit, editedFood.name, editedFood.price)">Save</button>
-  </div>
+  <form novalidate class="form-horizontal foodEditorForm" name="foodEditorForm">
+    <label for="foodname" ng-show="foodEditorForm.foodname.$error.minlength">Name must have at least 3 characters!</label><br>
+    <label for="foodname" ng-show="foodEditorForm.foodname.$error.maxlength">Name should not have more than 30 characters!</label><br>
+    <input type="text" name="foodname" ng-model="editedFood.name" required ng-minlength="3" ng-maxlength="30" ng-trim="true" placeholder="name of the food">
+    <input type="number" name="foodprice" ng-model="editedFood.price" required min="0" placeholder="price">
+    <button class="btn btn-primary" ng-click="editFood(foodToEdit, editedFood.name, editedFood.price)" ng-disabled="!foodEditorForm.$valid">Save</button>
+  </form>
   <h2>haloebed</h2>
 </div>
 

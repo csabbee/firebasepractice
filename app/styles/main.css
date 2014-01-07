@@ -88,3 +88,18 @@ body {
 .nav, .pagination, .carousel a {
     cursor: pointer;
 }
+.foodEditorForm input.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+}
+    
+.foodEditorForm input.ng-valid.ng-dirty {
+    background-color: #78FA89;
+}
+
+.addFoodForm input.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+}
+    
+.addFoodForm input.ng-valid.ng-dirty {
+    background-color: #78FA89;
+}

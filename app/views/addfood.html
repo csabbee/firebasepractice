@@ -1,10 +1,18 @@
-<div class="ng-form">
+<form class="addFoodForm" name="addFoodForm" novalidate>
   <div class="form-group col-sm-4">
-    <label for="foodname">Food name</label>
-    <input ng-model="newFood.name" type="text" class="form-control" id="foodname" placeholder="Food name">
-    <label for="foodprice">Price</label>
-    <input ng-model="newFood.price" type="number" class="form-control" id="foodprice" placeholder="Food price">
+    <label for="foodname">Food name</label><br>
+    <label for="foodname" class="error" ng-show="addFoodForm.foodname.$error.required && addFoodForm.foodname.$dirty">Required!<br></label>
+    <label for="foodname" class="error" ng-show="addFoodForm.foodname.$error.maxlength && addFoodForm.foodname.$dirty">
+      Name should not have more than 30 characters!<br>
+    </label>
+    <label for="foodname" ng-show="addFoodForm.foodname.$error.minlength && addFoodForm.foodname.$dirty">
+      Name must have at least 3 characters!<br>
+    </label>
+    <input ng-model="newFood.name" type="text" class="form-control" name="foodname" placeholder="Food name" ng-maxlength="30" ng-minlength="3" required>
+    <label for="foodprice">Price</label><br>
+    <label for="foodprice" class="error" ng-show="addFoodForm.foodprice.$error.required && addFoodForm.foodprice.$dirty">Required!</label>
+    <input ng-model="newFood.price" type="number" class="form-control" name="foodprice" placeholder="Food price" required>
     </br>
-    <button type="submit" class="btn btn-success" ng-click="addFood()">Submit</button>
-    </div>
-</div>
+    <button type="submit" class="btn btn-success" ng-click="addFood()" ng-disabled="!addFoodForm.$valid">Submit</button>
+  </div>
+</form>

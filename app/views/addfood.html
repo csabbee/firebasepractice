@@ -13,6 +13,6 @@
     <label for="foodprice" class="error" ng-show="addFoodForm.foodprice.$error.required && addFoodForm.foodprice.$dirty">Required!</label>
     <input ng-model="newFood.price" type="number" class="form-control" name="foodprice" placeholder="Food price" required>
     </br>
-    <button type="submit" class="btn btn-success" ng-click="addFood()" ng-disabled="!addFoodForm.$valid">Submit</button>
+    <button type="submit" class="btn btn-success" ng-click="addFood();addFoodForm.$setPristine()" ng-disabled="!addFoodForm.$valid" >Submit</button>
   </div>
 </form>

@@ -14,8 +14,8 @@ angular.module('firebasepracticeApp')
       $scope.selectFood = function(key){
         $scope.foodToEdit = key;
         $scope.showEditForm = 'true';
-        $scope.editedFood.name = $scope.foods[key].name;
-        $scope.editedFood.price = $scope.foods[key].price;
+        $scope.editedFood.name = $scope.foods[$scope.foods.$getIndex()[key]].name;
+        $scope.editedFood.price = $scope.foods[$scope.foods.$getIndex()[key]].price;
       };
       $scope.editFood = function(key, name, price){
         $scope.foods[key].name = name;
@@ -28,7 +28,7 @@ angular.module('firebasepracticeApp')
         $scope.newFood = {};
       };
       $scope.removeFood = function(key){
-        $scope.foods.$remove(key);
+        $scope.foods.$remove($scope.foods.$getIndex()[key]);
       };
     });
   });

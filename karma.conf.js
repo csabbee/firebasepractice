@@ -20,6 +20,8 @@ module.exports = function(config) {
       'app/bower_components/firebase/firebase.js',
       'app/bower_components/angularfire/angularfire.js',
       'app/bower_components/angular-bootstrap/ui-bootstrap.js',
+      'node_modules/ng-midway-tester/src/ngMidwayTester.js',
+      'test/mocha.conf.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',

@@ -18,8 +18,8 @@ angular.module('firebasepracticeApp')
         $scope.editedFood.price = $scope.foods[$scope.foods.$getIndex()[key]].price;
       };
       $scope.editFood = function(key, name, price){
-        $scope.foods[key].name = name;
-        $scope.foods[key].price = price;
+        $scope.foods[$scope.foods.$getIndex()[key]].name = name;
+        $scope.foods[$scope.foods.$getIndex()[key]].price = price;
         $scope.foodToEdit = '';
         $scope.showEditForm = '';
       };

@@ -8,6 +8,7 @@ angular.module('firebasepracticeApp')
     $scope.foodToEdit ='';
     $scope.showEditForm ='';
     $scope.editedFood = {};
+    $scope.modal = {};
     // 3-way data binding between angular and firebase
     foods.$bind($scope,'foods').then(function(){
 
@@ -29,6 +30,10 @@ angular.module('firebasepracticeApp')
       };
       $scope.removeFood = function(key){
         $scope.foods.$remove($scope.foods.$getIndex()[key]);
+      };
+      $scope.showFood = function(key){
+        $scope.modal.title = $scope.foods[$scope.foods.$getIndex()[key]].name;
+        $scope.modal.content = $scope.foods[$scope.foods.$getIndex()[key]].description;
       };
     });
   });

@@ -1,3 +1,4 @@
+<div id="alerts-container"></div>
 <form class="addFoodForm" name="addFoodForm" novalidate>
   <div class="form-group col-sm-4">
     <label for="foodname">Food name</label><br>
@@ -15,6 +16,6 @@
     <label for="foodDescription">Food description</label>
     <textarea rows="5" cols="50" ng-model="newFood.description" placeholder="Put the food description here" name="foodDescription"></textarea>
     <br>
-    <button type="submit" class="btn btn-success" ng-click="addFood();addFoodForm.$setPristine()" ng-disabled="!addFoodForm.$valid" >Submit</button>
+    <button type="submit" class="btn btn-success" ng-click="addFood();addFoodForm.$setPristine()" ng-disabled="!addFoodForm.$valid" data-duration="5" title="Success!" data-content="You have succesfully added {{newFood.name}}" data-type="success" data-container="#alerts-container" bs-alert>Submit</button>
   </div>
 </form>

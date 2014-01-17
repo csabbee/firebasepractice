@@ -5,9 +5,8 @@ angular.module('firebasepracticeApp')
 
   return function(input) {
     var result = [];
-
-    angular.forEach(input, function(data) {
-      if (data.hasOwnProperty('name') && data.hasOwnProperty('price')) {
+    angular.forEach(input, function(data, index) {
+      if(!angular.isFunction(data)){
         result.push(data);
       }
     });

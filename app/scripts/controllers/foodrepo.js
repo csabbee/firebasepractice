@@ -13,10 +13,11 @@ angular.module('firebasepracticeApp')
     foods.$bind($scope,'foods').then(function(){
 
       $scope.selectFood = function(key){
-        $scope.foodToEdit = key;
+        console.debug(key);
+        /*$scope.foodToEdit = key;
         $scope.showEditForm = 'true';
         $scope.editedFood.name = $scope.foods[$scope.foods.$getIndex()[key]].name;
-        $scope.editedFood.price = $scope.foods[$scope.foods.$getIndex()[key]].price;
+        $scope.editedFood.price = $scope.foods[$scope.foods.$getIndex()[key]].price;*/
       };
       $scope.editFood = function(key, name, price){
         $scope.foods[$scope.foods.$getIndex()[key]].name = name;

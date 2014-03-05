@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('firebasepracticeApp')
-  .controller('FoodrepoCtrl', function ($scope, $firebase) {
+  .controller('FoodrepoCtrl', function ($scope, $firebase, $location) {
     /*global Firebase*/
-    var FBURL='https://csabivalyi.firebaseio.com/';
+    var FBURL='https://csabivalyi.firebaseio.com/foods';
     var foods = $firebase(new Firebase(FBURL));
     $scope.foodToEdit ='';
     $scope.showEditForm ='';
@@ -11,7 +11,7 @@ angular.module('firebasepracticeApp')
     $scope.modal = {};
     // 3-way data binding between angular and firebase
     foods.$bind($scope,'foods').then(function(){
-
+      
       $scope.selectFood = function(key){
         console.debug(key);
         /*$scope.foodToEdit = key;
@@ -28,6 +28,7 @@ angular.module('firebasepracticeApp')
       $scope.addFood = function(){
         $scope.foods.$add($scope.newFood);
         $scope.newFood = {};
+        $location.url('/foodrepository');
       };
       $scope.removeFood = function(key){
         $scope.foods.$remove($scope.foods.$getIndex()[key]);

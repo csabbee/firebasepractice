@@ -15,7 +15,7 @@ angular.module('firebasepracticeApp')
 angular.module('firebasepracticeApp')
   .directive('navbar', function () {
     return {
-      templateUrl: 'views/templates/navbar.html',
+      templateUrl: 'views/partials/navbar.html',
       restrict: 'E',
       controller: 'navbarCtrl'
     };

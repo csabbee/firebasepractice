@@ -9,3 +9,4 @@ app/bower_components
 .tern-project
 .tern-port
 workspace.xml
+/nbproject/private/

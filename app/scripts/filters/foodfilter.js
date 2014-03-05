@@ -5,7 +5,7 @@ angular.module('firebasepracticeApp')
 
   return function(input) {
     var result = [];
-    angular.forEach(input, function(data, index) {
+    angular.forEach(input, function(data) {
       if(!angular.isFunction(data)){
         result.push(data);
       }
